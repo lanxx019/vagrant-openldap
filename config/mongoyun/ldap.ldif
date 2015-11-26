@@ -1,0 +1,123 @@
+# users ou
+dn: ou=users,dc=mongoyun,dc=dev
+objectclass: organizationalUnit
+objectclass: top
+ou: users
+
+# user, password is Password1!
+dn: uid=bin.lan@mongoyun.dev,ou=users,dc=mongoyun,dc=dev
+objectclass: account
+objectclass: simpleSecurityObject
+objectclass: top
+uid: bin.lan@mongoyun.dev
+userpassword: {MD5}DO8fsQ9gUpAopx9Y5U7Qew==
+
+dn: uid=luke.skywalker@mongoyun.dev,ou=users,dc=mongoyun,dc=dev
+objectclass: account
+objectclass: simpleSecurityObject
+objectclass: top
+uid: luke.skywalker@mongoyun.dev
+userpassword: {MD5}DO8fsQ9gUpAopx9Y5U7Qew==
+
+dn: uid=user1,ou=users,dc=mongoyun,dc=dev
+objectclass: account
+objectclass: simpleSecurityObject
+objectclass: top
+uid: user1
+userpassword: {MD5}DO8fsQ9gUpAopx9Y5U7Qew==
+
+dn: uid=user2,ou=users,dc=mongoyun,dc=dev
+objectclass: account
+objectclass: simpleSecurityObject
+objectclass: top
+uid: user2
+userpassword: {MD5}DO8fsQ9gUpAopx9Y5U7Qew==
+
+dn: uid=globalOwnerUser,ou=users,dc=mongoyun,dc=dev
+objectclass: account
+objectclass: simpleSecurityObject
+objectclass: top
+uid: globalOwnerUser
+userpassword: {MD5}DO8fsQ9gUpAopx9Y5U7Qew==
+
+dn: uid=globalMonitoringUser,ou=users,dc=mongoyun,dc=dev
+objectclass: account
+objectclass: simpleSecurityObject
+objectclass: top
+uid: globalMonitoringUser
+userpassword: {MD5}DO8fsQ9gUpAopx9Y5U7Qew==
+
+dn: uid=globalBackupUser,ou=users,dc=mongoyun,dc=dev
+objectclass: account
+objectclass: simpleSecurityObject
+objectclass: top
+uid: globalBackupUser
+userpassword: {MD5}DO8fsQ9gUpAopx9Y5U7Qew==
+
+dn: uid=globalUserAdminUser,ou=users,dc=mongoyun,dc=dev
+objectclass: account
+objectclass: simpleSecurityObject
+objectclass: top
+uid: globalUserAdminUser
+userpassword: {MD5}DO8fsQ9gUpAopx9Y5U7Qew==
+
+dn: uid=globalReadOnlyUser,ou=users,dc=mongoyun,dc=dev
+objectclass: account
+objectclass: simpleSecurityObject
+objectclass: top
+uid: globalReadOnlyUser
+userpassword: {MD5}DO8fsQ9gUpAopx9Y5U7Qew==
+
+# groups OU
+dn: ou=groups,dc=mongoyun,dc=dev
+objectclass: organizationalUnit
+objectclass: top
+ou: groups
+
+# groups
+dn: cn=group1,ou=groups,dc=mongoyun,dc=dev
+cn: group1
+member: uid=user1,ou=users,dc=mongoyun,dc=dev
+member: uid=user2,ou=users,dc=mongoyun,dc=dev
+objectclass: groupOfNames
+objectclass: top
+
+dn: cn=group2,ou=groups,dc=mongoyun,dc=dev
+cn: group1
+member: uid=user1,ou=users,dc=mongoyun,dc=dev
+member: uid=user2,ou=users,dc=mongoyun,dc=dev
+objectclass: groupOfNames
+objectclass: top
+
+dn: cn=global-owner,ou=groups,dc=mongoyun,dc=dev
+cn: global-owner
+member: uid=globalOwnerUser,ou=users,dc=mongoyun,dc=dev
+member: uid=bin.lan@mongoyun.dev,ou=users,dc=mongoyun,dc=dev
+objectclass: groupOfNames
+objectclass: top
+
+dn: cn=global-monitoring,ou=groups,dc=mongoyun,dc=dev
+cn: global-monitoring
+member: uid=globalMonitoringUser,ou=users,dc=mongoyun,dc=dev
+member: uid=luke.skywalker@mongoyun.dev,ou=users,dc=mongoyun,dc=dev
+objectclass: groupOfNames
+objectclass: top
+
+dn: cn=global-backup,ou=groups,dc=mongoyun,dc=dev
+cn: global-backup
+member: uid=globalBackupUser,ou=users,dc=mongoyun,dc=dev
+objectclass: groupOfNames
+objectclass: top
+
+dn: cn=global-user-admin,ou=groups,dc=mongoyun,dc=dev
+cn: global-user-admin
+member: uid=globalUserAdminUser,ou=users,dc=mongoyun,dc=dev
+objectclass: groupOfNames
+objectclass: top
+
+dn: cn=global-read-only,ou=groups,dc=mongoyun,dc=dev
+cn: global-read-only
+member: uid=globalReadOnlyUser,ou=users,dc=mongoyun,dc=dev
+objectclass: groupOfNames
+objectclass: top
+
